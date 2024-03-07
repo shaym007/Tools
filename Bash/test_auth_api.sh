@@ -14,11 +14,10 @@ echo -e "\nAuth config name:"
 read AUTH_CONFIG_NAME
 
 # Get the token from the GW with
-# kubectl exec -it gw-akeyless-api-gateway-98cd8d467-pscbc -- /bin/bash -c "cat /var/run/secrets/kubernetes.io/serviceaccount/token | base64 -w 0; echo "
+# kubectl exec -it <gw-pod-name> -- /bin/bash -c "cat /var/run/secrets/kubernetes.io/serviceaccount/token | base64 -w 0; echo "
 
 echo -e "\nk8s service account token (cat cat /var/run/secrets/kubernetes.io/serviceaccount/token | base64 -w0):"
 read TOKEN
-
 
 
 generate_post_data () {
